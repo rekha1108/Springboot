@@ -30,7 +30,7 @@ public class Employee {
 	@Column(name="email")
 	private String email;
 	
-	@OneToMany(targetEntity = Address.class , cascade = CascadeType.ALL)  
+	@OneToMany(targetEntity = Address.class , cascade = CascadeType.MERGE)
 	@JoinColumn(name = "Emp_id" , referencedColumnName = "id")
 	private List<Address> address;
 	
@@ -79,10 +79,22 @@ public class Employee {
 		this.email = email;
 	}
 
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Employee{" +
+				"id=" + id +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", email='" + email + '\'' +
+				", address=" + address +
+				'}';
 	}
-	
-
 }

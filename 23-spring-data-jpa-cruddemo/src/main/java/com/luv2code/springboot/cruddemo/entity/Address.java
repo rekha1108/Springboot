@@ -20,20 +20,24 @@ public class Address {
 	String streetName;
 	
 	@Column(name ="City")
-	String City;
+	String city;
 	
 	@Column(name ="State")
-	String State;
+	String state;
 	
 	@Column(name = "Pincode")
 	int pinCode;
+
+	public Address(){
+
+	}
 
 	public Address(int houseNo, String streetName, String city, String state, int pinCode) {
 		super();
 		this.houseNo = houseNo;
 		this.streetName = streetName;
-		City = city;
-		State = state;
+		city = city;
+		state = state;
 		this.pinCode = pinCode;
 	}
 
@@ -54,19 +58,19 @@ public class Address {
 	}
 
 	public String getCity() {
-		return City;
+		return city;
 	}
 
 	public void setCity(String city) {
-		City = city;
+		city = city;
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		state = state;
 	}
 
 	public int getPinCode() {
@@ -79,7 +83,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [houseNo=" + houseNo + ", streetName=" + streetName + ", City=" + City + ", State=" + State
+		return "Address [houseNo=" + houseNo + ", streetName=" + streetName + ", City=" + city + ", State=" + state
 				+ ", pinCode=" + pinCode + ", getHouseNo()=" + getHouseNo() + ", getStreetName()=" + getStreetName()
 				+ ", getCity()=" + getCity() + ", getState()=" + getState() + ", getPinCode()=" + getPinCode()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
